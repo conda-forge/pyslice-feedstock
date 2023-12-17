@@ -1,5 +1,5 @@
 {% set name = "pyslice" %}
-{% set version = "6.0.0" %}
+{% set version = "6.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyslice-{{ version }}.tar.gz
-  sha256: 53bfa9c01cdace5cd88f3fa67d7da992e90706f596aa98739817ae8172b5ab90
+  sha256: 6a1271fb8a757fcd0bd3ecaf893cc26c801f4bc9e66300cc97fc09c68b59def8
 
 build:
   entry_points:
