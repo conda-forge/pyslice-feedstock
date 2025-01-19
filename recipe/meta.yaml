@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyslice-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pyslice-{{ version }}.tar.gz
   sha256: e479178be548cbfdba6c0fa1d30ae5feca2e35bef699d6c6d0133cbe422f948a
 
 build:
@@ -14,17 +14,17 @@ build:
     - pyslice = pyslice:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - setuptools >=45
     - setuptools-scm >=6.2
     - wheel
     - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - binaryornot
     - numpy
 
@@ -36,6 +36,7 @@ test:
     - pyslice --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   summary: Specialized templating engine do develop a parameterized set of model data sets
