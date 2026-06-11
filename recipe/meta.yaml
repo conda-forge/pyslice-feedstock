@@ -1,5 +1,5 @@
 {% set name = "pyslice" %}
-{% set version = "6.0.3" %}
+{% set version = "6.0.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pyslice-{{ version }}.tar.gz
-  sha256: e479178be548cbfdba6c0fa1d30ae5feca2e35bef699d6c6d0133cbe422f948a
+  sha256: 42765460d5a98f7a17ae3f569caf9a79a2829fd3a0528ad12fe28b0c1a3c4a24
 
 build:
   entry_points:
     - pyslice = pyslice:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
