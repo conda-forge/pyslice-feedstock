@@ -13,7 +13,7 @@ source:
   sha256: 42765460d5a98f7a17ae3f569caf9a79a2829fd3a0528ad12fe28b0c1a3c4a24
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps
   python:
@@ -28,7 +28,7 @@ requirements:
     - wheel
     - pip
   run:
-    - python >=${{ python_min }}
+    - python >=3.10
     - binaryornot
     - chardet
     - numpy
